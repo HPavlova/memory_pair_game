@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory pair game</title>
-    <link rel="stylesheet" href="/styles/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory - Pair Game</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Memory Pair Game</h1>
-        <div class="timer">
-            <span>00:00:00</span>
+      <h1>Memory - Pair Game</h1>
+      <div class="level">
+        <h2 class="level__title">LEVEL :</h2>
+        <div id="level-buttons">
+          <button class="level-1">4x2</button>
+          <button class="level-2">4x3</button>
+          <button class="level-3">4x4</button>
         </div>
-        <div class="flip-container" ontouchstart="this.classList.toggle('hover');"></div>  
-        <div class="winMessage">
-            <h2 class="winMessage__title">You win!</h2>
-            <button class="winMessage__button">Play again</button>
-        </div>  
+      </div>
+      <div id="game-board"></div>
+      <button id="reset-button">Play</button>
     </div>
     <script src="/index.js"></script>
-</body>
+  </body>
 </html>
