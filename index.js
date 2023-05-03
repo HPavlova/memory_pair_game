@@ -127,6 +127,7 @@ function checkForMatch() {
       setTimeout(function () {
         alert("You win!");
         gameBoard.innerHTML = "";
+        selectedLevel = null;
         resetButton.classList.remove("button-disabled");
       }, 1000);
     }
