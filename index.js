@@ -24,6 +24,7 @@ const resetButton = document.getElementById("reset-button");
 let selectedLevel = null;
 let firstCard = null;
 let secondCard = null;
+let shuffleImages = [];
 
 let numMatches = 0;
 
@@ -47,7 +48,7 @@ function init(rows, columns) {
     }
   }
 
-  let shuffleImages = shuffle(newImages.concat(newImages));
+  shuffleImages = shuffle(newImages.concat(newImages));
 
   gameBoard.innerHTML = "";
   numMatches = 0;
@@ -122,9 +123,11 @@ function checkForMatch() {
     disableCards();
     numMatches++;
 
-    if (numMatches === images.length) {
+    if (numMatches === shuffleImages.length / 2) {
       setTimeout(function () {
         alert("You win!");
+        gameBoard.innerHTML = "";
+        resetButton.classList.remove("button-disabled");
       }, 1000);
     }
   } else {
@@ -153,10 +156,4 @@ function unflipCards() {
 
 function resetBoard() {
   [firstCard, secondCard] = [null, null];
-  //   resetButton.classList.remove("button-disabled");
 }
-
-// resetButton.addEventListener("click", function () {
-//   resetButton.classList.remove("button-disabled");
-//   init();
-// });
