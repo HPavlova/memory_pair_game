@@ -9,7 +9,7 @@ const images = [
   "sun.png",
 ];
 
-const backImage = "back.png";
+const backImg = "back.png";
 
 const playingField = [
   [4, 2],
@@ -62,15 +62,19 @@ function init(rows, columns) {
     image.src = `/images/${shuffleImages[i]}`;
     image.alt = `${shuffleImages[i]}`.split('.')[0];
 
+    let backImage = document.createElement("img");
+    backImage.src = `/images/${backImg}`;
+    backImage.alt = `${backImg}`.split('.')[0];
+
     card.classList.add("card");
     card.dataset.image = shuffleImages[i];
     card.addEventListener("click", handleCardClick);
 
     cardFront.classList.add("card-front");
-    cardFront.appendChild(image);
+    cardFront.appendChild(backImage);
 
-    cardBack.classList.add("card-front", "card-back");
-    cardBack.style.backgroundImage = `/images/${backImage}`;
+    cardBack.classList.add("card-back");
+    cardBack.appendChild(image);
 
     card.appendChild(cardFront);
     card.appendChild(cardBack);
