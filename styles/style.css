@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  font-family: "Circe Regular";
+  font-size: 16px;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+button:hover, button:focus{
+	color: #333;
+	border: none;
+}
+
+.level__title {
+  display: inline-block;
+}
+
+#level-buttons {
+  display: inline-block;
+}
+
+.level-1,
+.level-2,
+.level-3 {
+  width: 90px;
+  height: 40px;
+  background-color: #e3e3eb;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 640px;
+  margin: 0 auto;
+  border: 4px solid #333;
+  border-radius: 10px;
+  perspective: 1000px;
+}
+
+.card {
+  width: calc(25% - 16px);
+  height: 180px;
+  margin: 5px;
+  position: relative;
+  border: 3px solid #333;
+  border-radius: 10px;
+  perspective: 1000px;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.is-matched {
+  opacity: 0.5;
+  transition: opacity 0.6s ease-in-out;
+  cursor: default;
+}
+
+.card > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.card .card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: absolute;
+}
+
+.card .card-back {
+  transform: rotateY(180deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+#reset-button {
+  position: absolute;
+  background-color: #e3e3eb;
+  color: #60607c;
+
+  width: 33%;
+  left: 33%;
+  top: 33%;
+  padding: 70px 20px;
+
+  box-sizing: border-box;
+  font-weight: 700;
+  color: #fff;
+
+  border-radius: 8px;
+  border: 2px solid #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#reset-button:hover, #reset-button:focus{
+	color: #333;
+	border: none;
+}
+
+.button-disabled {
+  display: none;
+}
