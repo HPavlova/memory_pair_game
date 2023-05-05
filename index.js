@@ -60,7 +60,7 @@ function init(rows, columns) {
 
     let image = document.createElement("img");
     image.src = `/images/${shuffleImages[i]}`;
-    image.alt = image;
+    image.alt = `${shuffleImages[i]}`.split('.')[0];
 
     card.classList.add("card");
     card.dataset.image = shuffleImages[i];
