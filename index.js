@@ -59,11 +59,11 @@ function init(rows, columns) {
     let cardBack = document.createElement("div");
 
     let image = document.createElement("img");
-    image.src = `../images/${shuffleImages[i]}`;
+    image.src = `./images/${shuffleImages[i]}`;
     image.alt = `${shuffleImages[i]}`.split('.')[0];
 
     let backImage = document.createElement("img");
-    backImage.src = `../images/${backImg}`;
+    backImage.src = `./images/${backImg}`;
     backImage.alt = `${backImg}`.split('.')[0];
 
     card.classList.add("card");
